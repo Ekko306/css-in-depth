@@ -1,0 +1,23 @@
+<!doctype html>
+<header>
+    <title>Applying ems to different elements</title>
+    <style>
+    .box{
+        padding: 1em;
+        border-radius: 1em;
+        background-color: lightgray;
+        /*margin-top: 3em;*/
+        /*span标签对于margin-top,margin-bottom无效，但是margin-left,margin-right却是有效的。*/
+    }
+    .box-small{
+        font-size: 12px;
+    }
+    .box-large{
+        font-size: 18px;
+    }
+    </style>
+</header>
+<body>
+    <span class="box box-small">Small</span>
+    <span class="box box-large">Large</span>
+</body>
