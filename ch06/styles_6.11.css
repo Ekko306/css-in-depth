@@ -10,9 +10,13 @@ body {
     grid-auto-flow: dense;
 }
 .portfolio > figure {
+    display: flex;
+    flex-direction: column;
     margin: 0;
 }
 .portfolio img {
+    flex: 1;
+    object-fit: cover;
     max-width: 100%;
 }
 .portfolio figcaption {

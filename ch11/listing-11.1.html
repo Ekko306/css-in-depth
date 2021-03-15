@@ -2,9 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>background</title>
+    <style>
+        .fade {
+            height: 200px;
+            width: 400px;
+            background-image: linear-gradient(to right, white, blue);
+        }
+        .fade1 {
+            height: 200px;
+            width: 400px;
+            background-image: linear-gradient(90deg, white, blue);
+        }
+        .fade2 {
+            height: 200px;
+            width: 400px;
+            background-image: linear-gradient(90deg, red, white, blue);
+        }
+        .fade3 {
+            height: 200px;
+            width: 400px;
+            background-image: linear-gradient(90deg, red 0%, white 30%, blue 100%);
+        }
+        .fade4 {
+            height: 200px;
+            width: 400px;
+            background-image: linear-gradient(90deg,
+            red 40%, white 40%,
+            white 60%, blue 60%);
+        }
+
+        .fade5 {
+            height: 1em;
+            width: 400px;
+            background-image: repeating-linear-gradient(-45deg,
+            #57b, #57b 10px, #148 10px, #148 20px);
+            border-radius: 0.3em;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="fade5"></div>
 </body>
 </html>

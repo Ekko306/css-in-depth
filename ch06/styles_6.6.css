@@ -13,35 +13,52 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+/*不同于6.3*/
+
 .container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-columns: [left-start] 2fr [left-end right-start] 1fr [right-end];
+    /*grid-template-columns: 2fr 1fr;*/
+    /*和以前就多了几个括号里的内容，就不用手动画线做定位了，宽度还是左2右1*/
+
+    grid-template-rows: repeat(4, [row] auto);
+    /*grid-template-rows: repeat(4, auto);*/
+    /*这个也是多了 [row] 有四个区域 因此有 5个row*/
     grid-gap: 1.5em;
     max-width: 1080px;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 header,
 nav {
-    grid-column: 1 / 3;
+    grid-column: left-start / span 1;
+    /*grid-column: 1 / 3;*/
+    /*这里就不用 1 和 3 了*/
     grid-row: span 1;
 }
 
 .main {
-    grid-column: 1 / 2;
-    grid-row: 3 / 5;
+    grid-column: left;
+    /*grid-column: 1 / 2;*/
+    /*这里不用 1 和 2 而是 left-start 和 left-end 的简写出 left*/
+    grid-row: row 3 / span 2;
+    /*grid-row: 3 / 5;*/
+    /*我说的复杂就是太灵活了 再看上面这个又是新的 意思是 第3个row线 下面扩展两行*/
 }
 
 .sidebar-top {
-    grid-column: 2 / 3;
+    grid-column: right;
+    /*grid-column: 2 / 3;*/
     grid-row: 3 / 4;
 }
 
 .sidebar-bottom {
-    grid-column: 2 / 3;
+    grid-column: right;
+    /*grid-column: 2 / 3;*/
     grid-row: 4 / 5;
 }
+
+/*不同于6.3*/
 
 .tile {
     padding: 1.5em;

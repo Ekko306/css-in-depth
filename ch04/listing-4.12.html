@@ -29,7 +29,7 @@
         }
 
         .main {
-            padding: 0 1.5em;
+            padding: 0 1.5em 1.5em;
             background-color: #fff;
             border-radius: .5em;
         }
@@ -38,30 +38,40 @@
             max-width: 1080px;
             margin: 0 auto;
         }
-        .media {
+        .row::after {      /*一个伪元素*/
+            content: " ";
+            display: block;
+            clear: both
+        }
+
+        [class*="column-"] {
             float: left;
-            width: calc(50% - 1.5em);
+            padding: 0 0.75em;
+            margin-top: 0;
+        }
+        .column-1 { width: 8.3333% }
+        .column-2 { width: 16.6667% }
+        .column-3 { width: 25% }
+        .column-4 { width: 33.3333% }
+        .column-5 { width: 41.6667% }
+        .column-6 { width: 50% }
+        .column-7 { width: 58.3333% }
+        .column-8 { width: 66.6667% }
+        .column-9 { width: 75% }
+        .column-10 { width: 83.3333% }
+        .column-11 { width: 91.6667% }
+        .column-12 { width: 100% }
+
+
+        .media {
+            /*float: left;*/
+            /*width: calc(50% - 1.5em);*/
             padding: 1.5em;
             background-color: #eee;
             border-radius: .5em;
-            margin: 0 1.5em 1.5em 0;
+            /*margin: 0 1.5em 1.5em 0;*/
         }
-        .media:nth-child(odd) {
-            clear: left;
-        }
-        /*.clearfix::after{*/
-        /*    display: block;*/
-        /*    content: " ";*/
-        /*    clear: both*/
-        /*}*/
-        .clearfix::before,
-        .clearfix::after {
-            display: table;
-            content: " ";
-        }
-        .clearfix::after {
-            clear: both;
-        }
+
         .media-image {
             float: left;
             margin-right: 1.5em;
@@ -85,7 +95,8 @@
     <main class="main clearfix">
         <h2>Running tips</h2>
 
-        <div>
+        <div class="row">
+            <div class="column-6">
             <div class="media">
                 <img class="media-image" src="runner.png">
                 <div class="media-body">
@@ -97,7 +108,9 @@
                     </p>
                 </div>
             </div>
+            </div>
 
+            <div class="column-6">
             <div class="media">
                 <img class="media-image" src="shoes.png">
                 <div class="media-body">
@@ -108,7 +121,11 @@
                     </p>
                 </div>
             </div>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="column-6">
             <div class="media">
                 <img class="media-image" src="shoes.png">
                 <div class="media-body">
@@ -120,7 +137,9 @@
                     </p>
                 </div>
             </div>
+            </div>
 
+            <div class="column-6">
             <div class="media">
                 <img class="media-image" src="runner.png">
                 <div class="media-body">
@@ -131,6 +150,7 @@
                         front of you.
                     </p>
                 </div>
+            </div>
             </div>
         </div>
 <!--        <div style="clear: both">123</div>-->
